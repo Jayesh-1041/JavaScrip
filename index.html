@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="email" name="" id="email" />
+    <button>Submit</button>
+    <button>Go</button>
+    <script>
+
+      document.getElementsByTagName('button')[0]
+      .addEventListener('click', (event) => {
+    
+        let emailValue = document.getElementById('email').value; 
+        checkEmail(emailValue);
+      });
+
+      document.getElementsByTagName('button')[1]
+      .addEventListener('click', (event) => {
+        let inputValue = document.getElementsByTagName('input')[0].value;
+        checkEmail(inputValue);
+      });
+
+
+      function checkEmail(emailval) {
+        document.write(
+          emailval.includes('@') &&
+          emailval.includes('.') &&
+          !emailval.includes('@.') &&
+          emailval.slice(0, emailval.indexOf('@')) !='' &&
+          emailval.slice(emailval.indexOf('.') + 1) !=''
+        );
+      }
+
+    </script>
+  </body>
+</html>
+
+
